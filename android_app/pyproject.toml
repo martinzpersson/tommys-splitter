@@ -1,0 +1,38 @@
+[build-system]
+requires = ["briefcase"]
+
+[tool.briefcase]
+project_name = "Tommy's Splitter"
+bundle = "org.tommyssplitter"
+version = "1.0.0"
+url = "https://github.com/tommy/splitter"
+license = "MIT"
+author = "Tommy"
+author_email = "tommy@example.com"
+
+[tool.briefcase.app.tommyssplitter]
+formal_name = "Tommy's Splitter"
+description = "Split PostNord PDF labels perfectly for printing"
+long_description = """Tommy's Splitter automatically crops the right-side label from PostNord PDF files, positioning it perfectly for printing. No more manual cutting or alignment issues!
+
+Perfect for GrapheneOS users who value privacy - works completely offline with no tracking."""
+sources = ["tommyssplitter"]
+requires = [
+    "PyPDF2>=3.0.0",
+    "toga>=0.4.0",
+]
+
+[tool.briefcase.app.tommyssplitter.android]
+requires = [
+    "PyPDF2>=3.0.0",
+    "toga>=0.4.0",
+]
+build_gradle_dependencies = []
+permissions = [
+    "android.permission.READ_EXTERNAL_STORAGE",
+    "android.permission.WRITE_EXTERNAL_STORAGE",
+]
+
+[tool.briefcase.app.tommyssplitter.android.gradle]
+android_api_level = 33
+min_sdk_version = 21

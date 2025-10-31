@@ -1,0 +1,46 @@
+📋 PDF Spirit Android - Upload Checklist
+
+✅ Files to Upload to GitHub (ALL of these):
+
+📄 Core Files:
+□ main.py (the main Android app code)
+□ buildozer.spec (build configuration)
+□ requirements.txt (Python dependencies)
+
+📁 Build Scripts:
+□ setup_build_environment.sh
+□ build_apk.sh
+□ build_release.sh
+□ sign_apk.sh
+□ install_apk.sh
+□ build_and_install.sh
+
+🪟 Windows Scripts:
+□ setup_windows.bat
+□ build_windows.bat
+□ build_alternative.bat
+
+🐍 Python Scripts:
+□ create_simple_apk.py
+
+📖 Documentation:
+□ BUILD_INSTRUCTIONS.md
+□ QUICK_START.md
+□ WINDOWS_BUILD_GUIDE.md
+□ GITHUB_SETUP.md
+□ SUPER_SIMPLE_GITHUB.md
+□ upload_checklist.txt (this file)
+
+🔧 GitHub Actions:
+□ .github/workflows/build-apk.yml (IMPORTANT - this builds your APK!)
+
+📋 How to Upload:
+1. Select ALL files above
+2. Drag them into GitHub upload area
+3. Make sure .github folder uploads too
+4. Commit changes
+5. Wait for build to complete
+
+🎯 Critical File: .github/workflows/build-apk.yml
+This file tells GitHub HOW to build your Android APK.
+Without it, no APK will be created!
