@@ -1,0 +1,35 @@
+name: Build Tommy's Splitter APK
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y openjdk-17-jdk
+        pip install buildozer cython kivy PyPDF2
+    
+    - name: Build APK
+      run: |
+        cd android_app
+        buildozer android debug
+    
+    - name: Upload APK    
+      uses: actions/upload-artifact@v3
+      with:
+        name: tommyssplitter-apk
+        path: android_app/bin/*.apk
